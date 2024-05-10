@@ -415,3 +415,163 @@ Response:
 }
 
 ```
+
+Logout
+Method: POST
+Endpoint: /user/logout
+Description: Logs out the user.
+Response:
+```
+{
+  "success": true
+}
+
+```
+
+Get Current User
+Method: GET
+Endpoint: /user/me
+Description: Gets the current logged-in user's information.
+Response:
+```
+{
+  "success": true,
+  "data": {
+    "id": 1,
+    "name": "User Name"
+  }
+}
+```
+
+Get User Info by ID
+Method: GET
+Endpoint: /user/info/{id}
+Description: Gets user information by user ID.
+Path Variable:
+id (Long): User ID
+Response:
+```
+{
+  "success": true,
+  "data": {
+    "id": 1,
+    "name": "User Name",
+    "info": "User Info"
+  }
+}
+```
+
+Get User by ID
+Method: GET
+Endpoint: /user/{id}
+Description: Gets user information by user ID.
+Path Variable:
+id (Long): User ID
+Response:
+```
+{
+  "success": true,
+  "data": {
+    "id": 1,
+    "name": "User Name"
+  }
+}
+```
+
+Sign In
+Method: POST
+Endpoint: /user/sign
+Description: Signs in the user.
+Response:
+```
+{
+  "success": true
+}
+
+```
+
+
+VoucherController
+URL: /voucher
+Description: Handles voucher-related operations.
+Add Voucher
+Method: POST
+Endpoint: /voucher
+Description: Adds a new voucher.
+Request Body:
+```
+{
+  "name": "Voucher Name",
+  "discount": "10%"
+}
+
+```
+
+Response:
+```
+{
+  "success": true,
+  "data": 1
+}
+
+```
+
+Add Seckill Voucher
+Method: POST
+Endpoint: /voucher/seckill
+Description: Adds a new seckill voucher.
+Request Body:
+```
+{
+  "name": "Seckill Voucher Name",
+  "discount": "10%",
+  "seckillInfo": "Seckill Info"
+}
+
+```
+Response:
+```
+{
+  "success": true,
+  "data": 1
+}
+```
+
+
+Query Vouchers By Shop ID
+Method: GET
+Endpoint: /voucher/list/{shopId}
+Description: Queries vouchers by shop ID.
+Path Variable:
+shopId (Long): Shop ID
+Response:
+```
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "name": "Voucher Name",
+      "discount": "10%"
+    }
+  ]
+}
+```
+
+VoucherOrderController
+URL: /voucher-order
+Description: Handles voucher order-related operations.
+Seckill Voucher
+Method: POST
+Endpoint: /voucher-order/seckill/{id}
+Description: Performs a seckill operation on a voucher.
+Path Variable:
+id (Long): Voucher ID
+Response:
+```
+{
+  "success": true
+}
+
+```
+
